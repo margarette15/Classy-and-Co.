@@ -1,62 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classy and Co</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        body {
-            margin: 0;
-            color: #333;
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f4f4f4; 
-        }
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Classy and Co</title> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <style> 
+        body { 
+            margin: 0; 
+            color: #333; 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: #f4f4f4;  
+        } 
 
-        .bg-image {
-            background-image: url('girls.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            height: 120vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
+        .bg-image { 
+            background-image: url('girls.png'); 
+            background-repeat: no-repeat; 
+            background-position: center; 
+            background-size: cover; 
+            height: 120vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+        } 
 
-        .welcome-text {
-            font-size: 3.5rem;
-            font-weight: 600;
-            color: white; 
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
+        .welcome-text { 
+            font-size: 3.5rem; 
+            font-weight: 600; 
+            color: white;  
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+        } 
 
-        .navbar {
-            background-color: #D8CAA9; 
-        }
+        .navbar { 
+            background-color: #D8CAA9;  
+        } 
 
-        .navbar a {
-            color: black; 
-            margin: 0 15px;
-            font-family: 'Times New Roman', serif; 
+        .navbar a { 
+            color: black;  
+            margin: 0 15px; 
+            font-family: 'Times New Roman', serif;  
             font-weight: bold; 
             font-size: 1.2rem; 
             text-decoration: none; 
-        }
+        } 
 
-        .navbar a.active {
+        .navbar a.active { 
             color: black; 
-            text-decoration: underline;
-        }
+            text-decoration: underline; 
+        } 
 
-        .navbar-brand {
-            font-weight: 600;
-            font-size: 1.5rem;
-        }
+        .navbar-brand { 
+            font-weight: 600; 
+            font-size: 1.5rem; 
+        } 
 
         .section {
             padding: 60px 0;
@@ -105,7 +105,6 @@
             border-top: none;
         }
 
-        /* Responsive adjustments */
         @media (max-width: 768px) {
             .welcome-text {
                 font-size: 2.5rem;
@@ -116,8 +115,8 @@
             width: 100%;
             margin-bottom: 10px;
         }
-    </style>
-</head>
+    </style> 
+</head> 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
@@ -274,16 +273,16 @@
                     <p>Email: <a href="mailto:classyandco@gmail.com" class="text-white">classyandco@gmail.com</a></p>
                     <p>Phone: <span class="text-white">(09686705311)</span></p>
                     <p>Address: <span class="text-white">Tanauan City, Batangas</span></p>
-                </div> 
-                <div class="col-md-4"> 
-                    <h5>Follow Us</h5> 
-                    <a href="#" class="text-white mr-2"><i class="fab fa-facebook-f"></i></a> 
-                    <a href="#" class="text-white mr-2"><i class="fab fa-instagram"></i></a> 
-                    <a href="#" class="text-white"><i class="fab fa-twitter"></i></a> 
-                </div> 
-            </div> 
-            <p class="text-center">&copy; 2024 Classy and Co. All rights reserved.</p> 
-        </div> 
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <a href="https://www.facebook.com/margarette.degranoii/" class="text-white mr-2" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/margauxieeeee/" class="text-white mr-2" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/benchtm" class="text-white" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <p class="text-center">&copy; 2024 Classy and Co. All rights reserved.</p>
+        </div>
     </footer> 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> 
@@ -294,10 +293,10 @@
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(nav => {
                 nav.classList.remove('active');
-                nav.style.textDecoration = 'none'; // Reset underline
+                nav.style.textDecoration = 'none'; 
             });
             link.classList.add('active');
-            link.style.textDecoration = 'underline'; // Add underline to active link
+            link.style.textDecoration = 'underline'; 
         }
 
         document.getElementById('googleSignUp').addEventListener('click', function() {
@@ -308,20 +307,16 @@
             window.location.href = 'https://www.facebook.com/r.php'; 
         });
 
-        // Handle Sign In Form submission
         document.getElementById('signInForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
+            event.preventDefault(); 
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-
-            // Here you can add your logic to handle sign-in (like calling an API)
             alert(`Sign In successful for ${email}`);
-            $('#signInModal').modal('hide'); // Close modal after submission
+            $('#signInModal').modal('hide'); 
         });
 
-        // Handle Sign Up Form submission
         document.getElementById('signUpForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
+            event.preventDefault(); 
             const name = document.getElementById('signUpName').value;
             const email = document.getElementById('signUpEmail').value;
             const password = document.getElementById('signUpPassword').value;
@@ -331,11 +326,9 @@
                 alert("Passwords do not match!");
                 return;
             }
-
-            // Here you can add your logic to handle sign-up (like calling an API)
             alert(`Sign Up successful for ${name}`);
-            $('#signUpModal').modal('hide'); // Close modal after submission
+            $('#signUpModal').modal('hide'); 
         });
-    </script> 
-</body> 
+    </script>  
+</body>  
 </html>
