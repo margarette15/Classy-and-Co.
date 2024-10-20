@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classy and Co</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f4f4; /* Light background for contrast */
+        }
+
+        .bg-image {
+            background-image: url('girls.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 120vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .welcome-text {
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: white; /* Gold color for the welcome text */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar {
+            background-color: #D8CAA9; /* Darker color for navbar */
+        }
+
+        .navbar a {
+            color: black; /* Black text for navbar links */
+            margin: 0 15px;
+            font-family: 'Times New Roman', serif; /* Change font style */
+            font-weight: bold; /* Make text bold */
+            font-size: 1.2rem; /* Increase font size */
+            text-decoration: none; /* Remove underline */
+        }
+
+        .navbar a.active {
+            color: black; /* Keep color black when active */
+            text-decoration: underline; /* Underline active link */
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .section {
+            padding: 60px 0;
+            background-color: #fff; /* White background for sections */
+            margin-bottom: 40px;
+            border-radius: 10px; /* Rounded corners for sections */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        ::placeholder {
+            color: #999;
+        }
+
+        footer {
+            background-color: #2c2c2c; /* Dark footer color */
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .btn-neutral {
+            background-color: #D0BA98;
+            color: #fff;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn-neutral:hover {
+            background-color: #C0A68C;
+        }
+
+        h1, h3 {
+            color: #333;
+            font-weight: 600;
+        }
+
+        .modal-content {
+            border-radius: 10px;
+        }
+
+        .modal-header {
+            border-bottom: none;
+        }
+
+        .modal-footer {
+            border-top: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .welcome-text {
+                font-size: 2.5rem;
+            }
+        }
+
+        .social-btn {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <img src="logo.jpeg.png" alt="Logo" class="img-fluid" style="max-width: 50px;">
+            <a class="navbar-brand" href="#">Classy and Co.</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about" onclick="setActive(this)">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features" onclick="setActive(this)">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" onclick="setActive(this)">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-image">
+        <h1 class="welcome-text">Welcome to Classy and Co.</h1>
+        <h4>All Your Style Are Here!</h4>
+        <div>
+            <button class="btn btn-neutral" data-toggle="modal" data-target="#signInModal">Sign In</button>
+            <button class="btn btn-neutral" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+        </div>
+    </header>
+
+    <!-- Sign In Modal -->
+    <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signInModalLabel">Sign In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="signInForm">
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password" required>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember Me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+                        <div class="text-center mt-3">
+                            <a href="#" class="text-decoration-none">Forgot Password?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sign Up</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="signUpForm">
+                        <div class="form-group">
+                            <label for="signUpName">Full Name</label>
+                            <input type="text" class="form-control" id="signUpName" placeholder="Enter full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signUpEmail">Email</label>
+                            <input type="email" class="form-control" id="signUpEmail" placeholder="Enter email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signUpPassword">Password</label>
+                            <input type="password" class="form-control" id="signUpPassword" placeholder="Password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="terms" required>
+                            <label class="form-check-label" for="terms">I agree to the <a href="#" target="_blank">Terms and Conditions</a></label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                        <hr>
+                        <h6 class="text-center">Or Sign Up with</h6>
+                        <button type="button" class="btn btn-danger social-btn" id="googleSignUp">Google</button>
+                        <button type="button" class="btn btn-primary social-btn" id="facebookSignUp">Facebook</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h1 class="text-center">About Us</h1>
+            <p>Welcome to Classy and Co., where fashion meets passion! Established in 2024, we are a clothing brand dedicated to providing high-quality, stylish apparel for women. Our mission is to empower our customers through fashion, offering a range of styles that suit every occasion, from casual wear to elegant evening outfits.</p>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <div class="container">
+            <h1 class="text-center">Features</h1>
+            <ul class="list-unstyled">
+                <li>* A mobile-friendly layout that adapts to various screen sizes for seamless browsing.</li>
+                <li>* Categorized listings of clothing items, including detailed descriptions, sizes, colors, and pricing.</li>
+                <li>* Zoomable product images from multiple angles.</li>
+                <li>* Easy-to-use cart for adding and reviewing items before purchase.</li>
+                <li>* Comprehensive sizing charts to help customers choose the right fit.</li>
+                <li>* Real-time customer service support.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h1 class="text-center">Contact Us</h1>
+            <p>If you have any questions, feel free to reach out!</p>
+            <h3>Our Contact Information</h3>
+            <p>Email: <a href="mailto:classyandco@gmail.com">classyandco@gmail.com</a></p>
+            <p>Phone: (09686705311)</p>
+            <p>Address: Tanauan City, Batangas</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-white">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Information</h5>
+                    <p>Email: <a href="mailto:classyandco@gmail.com" class="text-white">classyandco@gmail.com</a></p>
+                    <p>Phone: <span class="text-white">(09686705311)</span></p>
+                    <p>Address: <span class="text-white">Tanauan City, Batangas</span></p>
+                </div> 
+                <div class="col-md-4"> 
+                    <h5>Follow Us</h5> 
+                    <a href="#" class="text-white mr-2"><i class="fab fa-facebook-f"></i></a> 
+                    <a href="#" class="text-white mr-2"><i class="fab fa-instagram"></i></a> 
+                    <a href="#" class="text-white"><i class="fab fa-twitter"></i></a> 
+                </div> 
+            </div> 
+            <p class="text-center">&copy; 2024 Classy and Co. All rights reserved.</p> 
+        </div> 
+    </footer> 
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+    <script>
+        function setActive(link) {
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(nav => {
+                nav.classList.remove('active');
+                nav.style.textDecoration = 'none'; // Reset underline
+            });
+            link.classList.add('active');
+            link.style.textDecoration = 'underline'; // Add underline to active link
+        }
+
+        document.getElementById('googleSignUp').addEventListener('click', function() {
+            window.location.href = 'https://accounts.google.com/signup'; 
+        });
+
+        document.getElementById('facebookSignUp').addEventListener('click', function() {
+            window.location.href = 'https://www.facebook.com/r.php'; 
+        });
+
+        // Handle Sign In Form submission
+        document.getElementById('signInForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Here you can add your logic to handle sign-in (like calling an API)
+            alert(`Sign In successful for ${email}`);
+            $('#signInModal').modal('hide'); // Close modal after submission
+        });
+
+        // Handle Sign Up Form submission
+        document.getElementById('signUpForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            const name = document.getElementById('signUpName').value;
+            const email = document.getElementById('signUpEmail').value;
+            const password = document.getElementById('signUpPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            // Here you can add your logic to handle sign-up (like calling an API)
+            alert(`Sign Up successful for ${name}`);
+            $('#signUpModal').modal('hide'); // Close modal after submission
+        });
+    </script> 
+</body> 
+</html>
